@@ -1,0 +1,21 @@
+
+<div class="course-intro">
+   <h4>Latest Courses</h4>
+
+</div>
+
+<app-course-toolbar
+  (onCourseAdd)="createCourse($event)"
+  (searchChange)="onSearchChange($event)"
+  (statusChange)="onStatusChange($event)">
+</app-course-toolbar>
+
+<app-course-table
+  [courses]="courses"
+  [totalCount]="totalCount"
+  [pageIndex]="page - 1"
+  [pageSize]="limit"
+  (pageChange)="onPageChange($event)" (onCourseDelete)="deleteCourse($event)" (onCourseEdit)="editCourse($event)">
+</app-course-table>
+
+

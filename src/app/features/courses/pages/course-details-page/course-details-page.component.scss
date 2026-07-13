@@ -1,0 +1,51 @@
+.course-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0.5rem;
+}
+
+.card {
+  width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+//   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+.category {
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.info p {
+  margin: 6px 0;
+}
+
+.description {
+  margin-top: 15px;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  padding: 8px 12px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}

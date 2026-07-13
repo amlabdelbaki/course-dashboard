@@ -1,0 +1,22 @@
+<aside class="sidebar" [class.sidebar--collapsed]="collapsed">
+  <nav class="sidebar-nav">
+    <a
+      *ngFor="let item of menuItems"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="item.exact ? { exact: true } : { exact: false }"
+      class="menu-item"
+      [attr.aria-label]="collapsed ? item.label : null"
+    >
+      <mat-icon class="menu-item__icon" aria-hidden="true">{{ item.icon }}</mat-icon>
+      <span class="menu-item__label">{{ item.label }}</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <!-- <button mat-flat-button type="button" class="new-task-btn" [attr.aria-label]="collapsed ? 'New Task' : null" (click)="onAddClick()">
+      <mat-icon>add</mat-icon>
+      New Task
+    </button> -->
+  </div>
+</aside>

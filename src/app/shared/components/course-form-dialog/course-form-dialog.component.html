@@ -1,0 +1,85 @@
+<h2 mat-dialog-title>
+  {{ isEdit ? 'Edit Course' : 'Add Course' }}
+</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <mat-dialog-content>
+
+    <!-- Course Name -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Course Name</mat-label>
+      <input matInput formControlName="courseName" />
+      <mat-error *ngIf="form.get('courseName')?.hasError('required')">
+        Required
+      </mat-error>
+      <mat-error *ngIf="form.get('courseName')?.hasError('minlength')">
+        Minimum 3 characters
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Instructor -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Instructor</mat-label>
+      <input matInput formControlName="instructorName" />
+      <mat-error>Required</mat-error>
+    </mat-form-field>
+
+    <!-- Category -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Category</mat-label>
+      <input matInput formControlName="category" />
+      <mat-error>Required</mat-error>
+    </mat-form-field>
+
+    <!-- Duration -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Duration (Hours)</mat-label>
+      <input matInput type="number" formControlName="duration" />
+      <mat-error>Must be > 0</mat-error>
+    </mat-form-field>
+
+    <!-- Price -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" formControlName="price" />
+      <mat-error>Minimum 0</mat-error>
+    </mat-form-field>
+
+    <!-- Status -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="Active">Active</mat-option>
+        <mat-option value="Draft">Draft</mat-option>
+        <mat-option value="Archived">Archived</mat-option>
+      </mat-select>
+      <mat-error>Required</mat-error>
+    </mat-form-field>
+    <!-- create Date -->
+      <mat-form-field appearance="outline" class="task-form__field">
+        <mat-label>Created date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="createdDate" readonly />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-hint align="end">
+        {{ form.get('description')?.value?.length || 0 }}/500
+      </mat-hint>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="close()" type="button">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">
+      {{ isEdit ? 'Update' : 'Create' }}
+    </button>
+  </mat-dialog-actions>
+
+</form>

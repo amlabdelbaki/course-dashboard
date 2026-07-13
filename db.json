@@ -1,0 +1,148 @@
+{
+  "courses": [
+    {
+      "courseName": "Vue.js Essentials",
+      "instructorName": "Anna Taylor",
+      "category": "Frontend",
+      "duration": 11,
+      "price": 110,
+      "status": "Active",
+      "createdDate": "2026-07-21T21:00:00.000Z",
+      "description": "",
+      "id": 8
+    },
+    {
+      "courseName": "MongoDB Basics",
+      "instructorName": "James Anderson",
+      "category": "Backend",
+      "duration": 9,
+      "price": 95,
+      "status": "Active",
+      "description": "",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "courseName": "SQL Masterclass",
+      "instructorName": "Robert Thomas",
+      "category": "Backend",
+      "duration": 20,
+      "price": 200,
+      "status": "Archived",
+      "createdDate": "2026-01-12"
+    },
+    {
+      "id": 11,
+      "courseName": "TypeScript Complete Guide",
+      "instructorName": "Laura White",
+      "category": "Frontend",
+      "duration": 15,
+      "price": 150,
+      "status": "Active",
+      "createdDate": "2026-06-01"
+    },
+    {
+      "id": 12,
+      "courseName": "Python for Beginners",
+      "instructorName": "Daniel Harris",
+      "category": "Backend",
+      "duration": 17,
+      "price": 170,
+      "status": "Active",
+      "createdDate": "2026-06-10"
+    },
+    {
+      "courseName": "Django Framework",
+      "instructorName": "Sophia Martinez",
+      "category": "Backend",
+      "duration": 19,
+      "price": 190,
+      "status": "Active",
+      "createdDate": "2026-06-20",
+      "description": "",
+      "id": 13
+    },
+    {
+      "id": 14,
+      "courseName": "CSS Advanced Techniques",
+      "instructorName": "William Garcia",
+      "category": "Frontend",
+      "duration": 10,
+      "price": 105,
+      "status": "Active",
+      "createdDate": "2026-05-18"
+    },
+    {
+      "id": 15,
+      "courseName": "HTML5 Mastery",
+      "instructorName": "Olivia Rodriguez",
+      "category": "Frontend",
+      "duration": 8,
+      "price": 80,
+      "status": "Archived",
+      "createdDate": "2026-02-05"
+    },
+    {
+      "id": 16,
+      "courseName": "Docker Essentials",
+      "instructorName": "Liam Martinez",
+      "category": "DevOps",
+      "duration": 12,
+      "price": 125,
+      "status": "Active",
+      "createdDate": "2026-04-22"
+    },
+    {
+      "courseName": "Kubernetes Basics",
+      "instructorName": "Noah Clark",
+      "category": "DevOps",
+      "duration": 14,
+      "price": 140,
+      "status": "Draft",
+      "createdDate": "2026-05-30",
+      "description": "",
+      "id": 17
+    },
+    {
+      "id": 18,
+      "courseName": "AWS Fundamentals",
+      "instructorName": "Ava Lewis",
+      "category": "Cloud",
+      "duration": 16,
+      "price": 160,
+      "status": "Active",
+      "createdDate": "2026-03-28"
+    },
+    {
+      "id": 19,
+      "courseName": "Azure Basics",
+      "instructorName": "Ethan Walker",
+      "category": "Cloud",
+      "duration": 13,
+      "price": 135,
+      "status": "Active",
+      "createdDate": "2026-06-12"
+    },
+    {
+      "id": 20,
+      "courseName": "Cybersecurity Intro",
+      "instructorName": "Mia Hall",
+      "category": "Security",
+      "duration": 11,
+      "price": 115,
+      "status": "Archived",
+      "createdDate": "2026-01-30"
+    },
+    {
+      "courseName": "Java script",
+      "instructorName": "Aml ",
+      "category": "software",
+      "duration": 10,
+      "price": 100,
+      "status": "Active",
+      "createdDate": "2026-07-29T21:00:00.000Z",
+      "description": "",
+      "id": 21
+    }
+  ]
+}

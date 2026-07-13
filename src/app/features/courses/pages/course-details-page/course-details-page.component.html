@@ -1,0 +1,32 @@
+<div class="course-container" *ngIf="course; else loading">
+
+  <div class="card">
+    <h2>{{ course.name }}</h2>
+
+    <p class="category">{{ course.category }}</p>
+
+    <div class="info">
+      <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+      <p><strong>Duration:</strong> {{ course.duration }} hours</p>
+      <p><strong>Price:</strong> ${{ course.price }}</p>
+      <p>
+        <strong>Status:</strong>
+        <span [ngClass]="course.status === 'Active' ? 'active' : 'inactive'">
+          {{ course.status }}
+        </span>
+      </p>
+    </div>
+
+    <div class="description">
+      <h4>Description</h4>
+      <p>{{ course.description || 'No description available.' }}</p>
+    </div>
+
+    <button routerLink="/courses">⬅ Back</button>
+  </div>
+
+</div>
+
+<ng-template #loading>
+  <p>Loading course details...</p>
+</ng-template>

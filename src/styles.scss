@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  height: 100%;
+  color-scheme: light;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+:root {
+  --primary: #7C4DFF;
+  --primary-dark: #651FFF;
+  --primary-light: #B388FF;
+
+  --accent: #E91E63;
+  --accent-dark: #C2185B;
+  --accent-light: #F06292;
+
+  --warn: #F44336;
+
+  --bg: #F5F5F5;
+  --text: #212121;
+}
+
+/* Light theme for Material dialogs */
+.mat-mdc-dialog-container.light-dialog {
+  --mdc-dialog-container-color: #ffffff;
+  --mat-dialog-container-color: #ffffff;
+  --mdc-dialog-subhead-color: #212121;
+  --mat-dialog-headline-color: #212121;
+  --mat-dialog-with-actions-content-padding: 20px 24px;
+  --mat-dialog-headline-padding: 20px 24px 12px;
+
+  color-scheme: light;
+  background: #ffffff;
+  color: #212121;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.light-dialog .mat-mdc-dialog-title,
+.light-dialog h2[mat-dialog-title] {
+  color: #212121 !important;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.light-dialog .mat-mdc-dialog-content {
+  color: #424242;
+}
+
+.light-dialog .mat-mdc-dialog-actions {
+  border-top: 1px solid #f0f0f0;
+  padding: 12px 24px 16px;
+}
+
+.light-dialog .mat-mdc-form-field {
+  --mdc-outlined-text-field-outline-color: #d0d5dd;
+  --mdc-outlined-text-field-hover-outline-color: var(--primary);
+  --mdc-outlined-text-field-focus-outline-color: var(--primary);
+  --mdc-outlined-text-field-input-text-color: #333333;
+  --mdc-outlined-text-field-label-text-color: #616161;
+  --mdc-outlined-text-field-focus-label-text-color: var(--primary);
+  --mdc-outlined-text-field-error-outline-color: var(--warn);
+  --mdc-outlined-text-field-error-hover-outline-color: var(--warn);
+  --mdc-outlined-text-field-error-focus-outline-color: var(--warn);
+  --mdc-outlined-text-field-error-label-text-color: var(--warn);
+  --mdc-outlined-text-field-error-focus-label-text-color: var(--warn);
+  --mdc-outlined-text-field-error-input-text-color: #333333;
+  --mat-form-field-error-text-color: #d32f2f;
+  --mat-form-field-hint-text-color: #757575;
+  --mat-select-enabled-trigger-text-color: #333333;
+  --mat-select-enabled-arrow-color: #5f6368;
+  --mat-form-field-container-text-size: 0.9375rem;
+}
+
+.light-dialog .mat-mdc-text-field-wrapper {
+  background: #ffffff;
+}
+
+.light-dialog .mat-mdc-form-field-error,
+.light-dialog mat-error {
+  color: #d32f2f !important;
+}
+
+.light-dialog .mat-mdc-form-field-hint,
+.light-dialog mat-hint {
+  color: #757575 !important;
+}
+
+.light-dialog .mat-mdc-dialog-content p {
+  margin: 0;
+  line-height: 1.5;
+  color: #424242;
+}

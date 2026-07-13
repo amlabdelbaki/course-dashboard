@@ -1,0 +1,114 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.875rem;
+  width:100%;
+  margin: auto;
+  padding: 0.55rem 0.65rem;
+  background: #ffffff;
+  border-radius: 0px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+
+}
+
+.search {
+  display: flex;
+  align-items: center;
+ 
+  padding: 9px 17px;
+  border: 1px solid #e2e8f0;
+  border-radius:4px;
+  background: #ffffff;
+  .search-icon {
+    flex-shrink: 0;
+    color: #94a3b8;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 4px;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 6px;
+    font-size: 0.9375rem;
+    color: #334155;
+
+    &::placeholder {
+      color: #94a3b8;
+    }
+  }
+}
+
+
+.toolbar-filter{
+    display: flex;
+    gap: 2em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+
+
+.status-field {
+  width: 130px;
+}
+
+
+
+/* Toolbar tab  */
+:host ::ng-deep  .mat-mdc-tab-label-container {
+  border: 0px;
+}
+
+:host ::ng-deep .status-field .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+:host ::ng-deep .status-field .mat-mdc-text-field-wrapper {
+  height: 38px;
+  border-radius: 8px;
+}
+
+:host ::ng-deep .status-field .mat-mdc-form-field-infix {
+  min-height: 38px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+:host ::ng-deep .status-field .mat-mdc-select-value{
+  color: var(--text)
+}
+
+@media (max-width: 920px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+
+}
+
+@media (max-width: 560px) {
+ 
+
+  .status-field {
+    width: 100%;
+  }
+
+
+}

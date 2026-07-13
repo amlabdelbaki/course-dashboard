@@ -1,0 +1,148 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  min-height: 64px;
+  height: auto;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  min-width: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.logo:hover .logo-mark {
+  transform: translateX(-2px);
+}
+
+.logo:focus-visible {
+  outline: 2px solid #7C4DFF;
+  outline-offset: 6px;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #7C4DFF;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+
+  mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+  }
+}
+
+.logo-text {
+    font-size: 1.125rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.navbar-search {
+  display: flex;
+  justify-content: center;
+  min-width: 400px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 9px 17px;
+  border: 1px solid #e2e8f0;
+  border-radius:4px;
+  background: #ffffff;
+  .search-icon {
+    flex-shrink: 0;
+    color: #94a3b8;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 4px;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 6px;
+    font-size: 0.9375rem;
+    color: #334155;
+
+    &::placeholder {
+      color: #94a3b8;
+    }
+  }
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.notification-btn {
+  color: #ca8a04;
+
+  mat-icon {
+    color: #eab308;
+  }
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #7C4DFF;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+@media (max-width:  768px) {
+  .navbar {
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-actions {
+    justify-content: space-between;
+  }
+
+  .navbar-search {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+<section class="toolbar">
+    <div class="toolbar-filter">
+        
+        <div class="search">
+            <mat-icon class="search-icon">search</mat-icon>
+            <input
+              type="search"
+              [formControl]="searchControl"
+              placeholder="Search Courses..."
+              autocomplete="off"
+            />
+        </div>
+        <mat-form-field class="status-field" appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="selectedStatus" color="primary" (selectionChange)="onStatusChange($event.value)">
+                <mat-option value="all">All</mat-option>
+                <mat-option value="active">Active</mat-option>
+                <mat-option value="draft">Draft</mat-option>
+                <mat-option value="archived">Archived</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+    <div class="actions">
+        <button mat-flat-button class="add-btn" color="accent" type="button" (click)="openAddCourse()">
+            create course
+        </button>
+    </div>
+
+
+</section>
