@@ -59,9 +59,7 @@ export class CourseTableComponent {
     });
   }
 
-  trackById(_index: number, course: Course): number {
-    return course.id;
-  }
+ 
 
   editCourse(course: Course) {
     const id = course.id;
