@@ -27,7 +27,7 @@ export class ManageCoursesService {
     return this.http.get(this.baseUrl, { params, observe: 'response' });
   }
 
-  getCourseById(id: number) {
+  getCourseById(id: string) {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
@@ -35,11 +35,11 @@ export class ManageCoursesService {
     return this.http.post(this.baseUrl, course);
   }
 
-  updateCourse(id: number, course: any) {
+  updateCourse(id: string, course: any) {
     return this.http.put(`${this.baseUrl}/${id}`, course);
   }
 
-  deleteCourse(id: number) {
+  deleteCourse(id: string) {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
   getTotalCourses() {

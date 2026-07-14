@@ -26,7 +26,7 @@ export class CourseDetailsPageComponent {
     const id = this.route.snapshot.paramMap.get('id');
 
     if (id) {
-      this.courseService.getCourseById(+id).subscribe(res => {
+      this.courseService.getCourseById(id).subscribe(res => {
         this.course = res;
       });
     }
