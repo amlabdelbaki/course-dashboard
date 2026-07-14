@@ -18,3 +18,11 @@
   }
 }
 
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical */
+  align-items: center;     /* horizontal */
+  height: 100vh;           /* full screen */
+}
+

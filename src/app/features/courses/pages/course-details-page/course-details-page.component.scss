@@ -49,3 +49,12 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical */
+  align-items: center;     /* horizontal */
+  height: 100vh;           /* full screen */
+}

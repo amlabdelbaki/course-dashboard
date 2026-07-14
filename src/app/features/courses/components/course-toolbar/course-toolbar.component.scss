@@ -105,7 +105,9 @@
 
 @media (max-width: 560px) {
  
-
+    .toolbar-filter{
+        flex-direction: column;
+    }
   .status-field {
     width: 100%;
   }

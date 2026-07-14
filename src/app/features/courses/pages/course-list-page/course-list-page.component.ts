@@ -3,17 +3,19 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PageEvent } from '@angular/material/paginator';
-import { Subject, switchMap } from 'rxjs';
+import { Subject, switchMap,tap } from 'rxjs';
 import { Course } from '../../models/course.interface';
 import { ManageCoursesService } from './../../services/manage-courses.service';
 import { CourseToolbarComponent } from './../../components/course-toolbar/course-toolbar.component';
 import { CourseTableComponent } from './../../components/course-table/course-table.component';
-
+import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-course-list-page',
   standalone: true,
-  imports: [MatButtonModule, CourseToolbarComponent, CourseTableComponent],
-  templateUrl: './course-list-page.component.html',
+  imports: [CommonModule,MatButtonModule, CourseToolbarComponent, CourseTableComponent,MatProgressSpinnerModule],
+
+templateUrl: './course-list-page.component.html',
   styleUrl: './course-list-page.component.scss',
 })
 export class CourseListPageComponent implements OnInit {
@@ -21,7 +23,7 @@ export class CourseListPageComponent implements OnInit {
   private readonly snackBar = inject(MatSnackBar);
   private readonly destroyRef = inject(DestroyRef);
   private readonly filterChanges$ = new Subject<void>();
-
+  loading = signal(true);
   courses = signal<Course[]>([]);
   totalCount = 0;
   page = 1;
@@ -32,12 +34,19 @@ export class CourseListPageComponent implements OnInit {
   ngOnInit(): void {
     this.filterChanges$
       .pipe(
+        tap(() => this.loading.set(true)), // ✅ start loading BEFORE request
         switchMap(() => this.fetchCourses()),
         takeUntilDestroyed(this.destroyRef),
       )
-      .subscribe((response) => {
-        this.courses.set(response.body as Course[]);
-        this.totalCount = Number(response.headers.get('X-Total-Count') ?? 0);
+      .subscribe({
+        next: (response) => {
+          this.courses.set(response.body as Course[]);
+          this.totalCount = Number(response.headers.get('X-Total-Count') ?? 0);
+          this.loading.set(false); // ✅ stop loading
+        },
+        error: () => {
+          this.loading.set(false); // ✅ also stop on error
+        }
       });
 
     this.filterChanges$.next();
@@ -50,8 +59,10 @@ export class CourseListPageComponent implements OnInit {
   }
 
   loadCourses(): void {
+    this.loading.set(true);
     this.fetchCourses().subscribe((response) => {
       this.courses.set(response.body as Course[]);
+      this.loading.set(false);
       this.totalCount = Number(response.headers.get('X-Total-Count') ?? 0);
     });
   }

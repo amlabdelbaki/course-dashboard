@@ -9,13 +9,22 @@
   (searchChange)="onSearchChange($event)"
   (statusChange)="onStatusChange($event)">
 </app-course-toolbar>
-
-<app-course-table
+<section class="" *ngIf="!loading(); else loadingTemp" >
+<app-course-table  
   [courses]="courses"
   [totalCount]="totalCount"
   [pageIndex]="page - 1"
   [pageSize]="limit"
   (pageChange)="onPageChange($event)" (onCourseDelete)="deleteCourse($event)" (onCourseEdit)="editCourse($event)">
 </app-course-table>
+</section>
 
+
+
+<ng-template #loadingTemp>
+  <div class="loading-container">
+    <mat-spinner></mat-spinner>
+     <p>Loading courses ...</p>
+  </div>
+</ng-template>
 

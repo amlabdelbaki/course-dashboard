@@ -13,8 +13,8 @@ export class ManageCoursesService {
 
   getCourses(page: number = 1, limit: number = 5, search?: string, status?: string) {
     let params = new HttpParams()
-      .set('_page', page)
-      .set('_limit', limit);
+      .set('page', page)
+      .set('limit', limit);
 
     if (search) {
       params = params.set('courseName_like', search);

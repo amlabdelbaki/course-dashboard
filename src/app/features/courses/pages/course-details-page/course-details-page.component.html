@@ -22,11 +22,14 @@
       <p>{{ course.description || 'No description available.' }}</p>
     </div>
 
-    <button routerLink="/courses">⬅ Back</button>
+    <button mat-flat-button  routerLink="/courses" color="accent" >⬅ Back</button>
   </div>
 
 </div>
 
 <ng-template #loading>
-  <p>Loading course details...</p>
+  <div class="loading-container">
+    <mat-spinner></mat-spinner>
+    <p>Loading course details...</p>
+  </div>
 </ng-template>

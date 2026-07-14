@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ManageCoursesService } from './../../services/manage-courses.service';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-course-details-page',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule,RouterModule,  MatButtonModule,MatProgressSpinnerModule],
+
 
 
 templateUrl: './course-details-page.component.html',
