@@ -1,27 +1,44 @@
-# CourseDashboard
+# 🎓 Course Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+A modern Angular application for managing courses with full CRUD operations, pagination, and filtering.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Live Demo
+https://amlabdelbaki.github.io/course-dashboard/
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🔗 API (MockAPI)
+https://6a55e3a9e49d9eb2cc563a1b.mockapi.io/api/v1/courses
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✨ Features
 
-## Running unit tests
+- 📚 View all courses
+- ➕ Add new course
+- ✏️ Edit existing course
+- ❌ Delete course
+- 📄 Pagination support
+- 🔍 Filtering & searching
+- 🌐 Connected to real online API (MockAPI)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🛠️ Tech Stack
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Angular 18
+- TypeScript
+- Angular Material 
+- MockAPI
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📦 Installation
+
+```bash
+git clone https://github.com/amlabdelbaki/course-dashboard.git
+cd course-dashboard
+npm install
+ng serve
