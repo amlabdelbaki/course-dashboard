@@ -1,12 +1,12 @@
 <div class="course-container" *ngIf="course; else loading">
 
   <div class="card">
-    <h2>{{ course.name }}</h2>
+    <h2>{{ course.courseName }}</h2>
 
     <p class="category">{{ course.category }}</p>
 
     <div class="info">
-      <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+      <p><strong>Instructor:</strong> {{ course.instructorName }}</p>
       <p><strong>Duration:</strong> {{ course.duration }} hours</p>
       <p><strong>Price:</strong> ${{ course.price }}</p>
       <p>
