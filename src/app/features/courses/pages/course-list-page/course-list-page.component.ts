@@ -32,6 +32,7 @@ export class CourseListPageComponent implements OnInit {
   statusFilter = 'all';
 
   ngOnInit(): void {
+   this.getTotalCoursesCount();
     this.filterChanges$
       .pipe(
         tap(() => this.loading.set(true)), // ✅ start loading BEFORE request
@@ -41,7 +42,7 @@ export class CourseListPageComponent implements OnInit {
       .subscribe({
         next: (response) => {
           this.courses.set(response.body as Course[]);
-          this.totalCount = Number(response.headers.get('X-Total-Count') ?? 0);
+          // this.totalCount = Number(response.headers.get('X-Total-Count') ?? 0);
           this.loading.set(false); // ✅ stop loading
         },
         error: () => {
@@ -58,12 +59,18 @@ export class CourseListPageComponent implements OnInit {
     return this.coursesService.getCourses(this.page, this.limit, search, status);
   }
 
+  getTotalCoursesCount(){
+      this.coursesService.getTotalCourses().subscribe(res => {
+       this.totalCount = res.length;
+  });
+  }
+
   loadCourses(): void {
     this.loading.set(true);
     this.fetchCourses().subscribe((response) => {
       this.courses.set(response.body as Course[]);
       this.loading.set(false);
-      this.totalCount = Number(response.headers.get('X-Total-Count') ?? 0);
+      // this.totalCount = Number(response.headers.get('X-Total-Count') ?? 0);
     });
   }
 

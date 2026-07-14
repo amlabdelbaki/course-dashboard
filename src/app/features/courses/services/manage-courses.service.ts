@@ -42,4 +42,7 @@ export class ManageCoursesService {
   deleteCourse(id: number) {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
+  getTotalCourses() {
+  return this.http.get<any[]>(`${this.baseUrl}`);
+}
 }
